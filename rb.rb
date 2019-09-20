@@ -1,3 +1,6 @@
+#not sure why learn is accepting these. If i run the program, I am
+# returning the correct value. Need to compare.
+
 require "pry"
 
 def game_hash
@@ -27,8 +30,8 @@ def game_hash
             slam_dunks:7
           },
           {player_name: "Brook Lopez",
-              number:"11",
-              shoe:"17",
+              number:11,
+              shoe:17,
               points:17,
               rebounds:19,
               assists:10,
@@ -121,7 +124,7 @@ def home_team_name
   game_hash[:home][:players][1][:player_name]
 end
 
-
+puts home_team_name
 
 def good_practices
   game_hash.each do |location, team_data|
@@ -135,7 +138,7 @@ def good_practices
   end
 end
 
-
+good_practices
 
 
 def num_points_scored(name)
@@ -149,7 +152,7 @@ def num_points_scored(name)
   end
 end
 
-
+num_points_scored("Desagna Diop")
 
 def shoe_size(name)
   game_hash.each do |team, team_stats|
@@ -163,7 +166,7 @@ def shoe_size(name)
 end
 
 
-
+shoe_size("Desagna Diop")
 
 def team_colors(team_name)
   game_hash.each do |team, team_stats|
@@ -171,7 +174,7 @@ def team_colors(team_name)
     end
 end
 
-
+team_colors("Brooklyn Nets")
 
 def team_names
   new_array = []
@@ -181,7 +184,7 @@ def team_names
   return p new_array
 end
 
-
+team_names
 
 def player_numbers(teamname)
   jersey_numbers = []
@@ -197,7 +200,7 @@ def player_numbers(teamname)
   p jersey_numbers
 end
 
-
+player_numbers("Brooklyn Nets")
 
 def player_stats(name)
   game_hash.each do |team, team_stats|
@@ -210,20 +213,38 @@ def player_stats(name)
   end
 end
 
-
+player_stats("Ben Gordon")
 
 def big_shoe_rebounds
+  max = 0
+  max_rebounds = 0
   game_hash.each do |team, team_stats|
-  team_stats.each do |attributes, data|
-    next unless attributes == :players
-    data.each do |players|
-      i = 0
-      max = 0
-      while 1 < players.length do
-        p players[:shoe]
-        i += 1
-      end
+   team_stats[:players].each do |players|
+      if players[:shoe] > max
+        max = players[:shoe]
+        max_rebounds = players[:rebounds]
+    end
+   end
+end
+p max_rebounds
+end
+
+
+
+
+big_shoe_rebounds
+
+def most_points_scored
+  max = 0
+  game_hash.each do |team, team_stats|
+   team_stats[:players].each do |players|
+      players[:points] > max
+        max = players[:points]
       end
     end
-  end
+   end
+   p max
 end
+
+
+most_points_scored
