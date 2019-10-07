@@ -1,4 +1,4 @@
-#not sure why learn is accepting these. If i run the program, I am
+#not sure why learn is not accepting these. If i run the program, I am
 # returning the correct value. Need to compare.
 
 require "pry"
@@ -152,7 +152,7 @@ def num_points_scored(name)
   end
 end
 
-num_points_scored("Desagna Diop")
+
 
 def shoe_size(name)
   game_hash.each do |team, team_stats|
@@ -166,7 +166,7 @@ def shoe_size(name)
 end
 
 
-shoe_size("Desagna Diop")
+
 
 def team_colors(team_name)
   game_hash.each do |team, team_stats|
@@ -174,7 +174,7 @@ def team_colors(team_name)
     end
 end
 
-team_colors("Brooklyn Nets")
+
 
 def team_names
   new_array = []
@@ -184,7 +184,7 @@ def team_names
   return p new_array
 end
 
-team_names
+
 
 def player_numbers(teamname)
   jersey_numbers = []
@@ -200,7 +200,7 @@ def player_numbers(teamname)
   p jersey_numbers
 end
 
-player_numbers("Brooklyn Nets")
+
 
 def player_stats(name)
   game_hash.each do |team, team_stats|
@@ -213,7 +213,7 @@ def player_stats(name)
   end
 end
 
-player_stats("Ben Gordon")
+
 
 def big_shoe_rebounds
   max = 0
@@ -232,7 +232,7 @@ end
 
 
 
-big_shoe_rebounds
+
 
 def most_points_scored
   max = 0
@@ -245,6 +245,3 @@ def most_points_scored
    end
    p max
 end
-
-
-most_points_scored
