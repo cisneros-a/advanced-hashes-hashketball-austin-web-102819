@@ -232,18 +232,4 @@ end
 
 winning_team
 
-def player_with_longest_name
-  i = 0
- game_hash.each do |team, game_data|
-   while i < game_data[:players].length
-    p game_data[:players][i][:player_name]
-<<<<<<< HEAD
-    i += 1
-  end
-=======
-  end 
->>>>>>> 10ba93879433520f914faa7a2bb61396b96905bb
- end
-end
 
-player_with_longest_name
